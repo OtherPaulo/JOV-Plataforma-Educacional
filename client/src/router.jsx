@@ -4,8 +4,8 @@ import AuthLogin from "./pages/auth/login";
 import AuthRegister from "./pages/auth/register";
 import AdminLayout from "./components/admin-view/layout";
 import AdminDashboard from "./pages/admin-view/dashboard";
-import AdminProducts from "./pages/admin-view/products";
-import AdminOrders from "./pages/admin-view/orders";
+import AdminPlaylist from "./pages/admin-view/playlist";
+import AdminFiles from "./pages/admin-view/files";
 import AdminFeatures from "./pages/admin-view/features";
 import CurseLayout from "./components/shopping-view/layout";
 import CurseHome from "./pages/curse-view/home";
@@ -50,8 +50,8 @@ function App() {
           }
         >
           <Route path="dashboard" element={<AdminDashboard />} />
-          <Route path="products" element={<AdminProducts />} />
-          <Route path="orders" element={<AdminOrders />} />
+          <Route path="playlist" element={<AdminPlaylist />} />
+          <Route path="files" element={<AdminFiles />} />
           <Route path="features" element={<AdminFeatures />} />
         </Route>
         
