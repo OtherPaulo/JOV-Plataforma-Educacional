@@ -1,10 +1,18 @@
-function JovHome() {
-    return (
-      <div>
-        <div> Jov view home</div>
-      </div>
-    );
-  }
-  
-  export default JovHome;
-  
+import FeaturesSection from "@/components/home-view/feature";
+import Footer from "@/components/home-view/footer";
+import Header from "@/components/Home-view/header";
+import HeroSection from "@/components/home-view/hero";
+
+
+export default function Home() {
+  return (
+    <>
+      <Header />
+      <main>
+      <HeroSection />
+      <FeaturesSection />
+      </main>
+      <Footer />
+    </>
+  );
+}
