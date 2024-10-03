@@ -7,14 +7,15 @@ import AdminDashboard from "./pages/admin-view/dashboard";
 import AdminProducts from "./pages/admin-view/products";
 import AdminOrders from "./pages/admin-view/orders";
 import AdminFeatures from "./pages/admin-view/features";
-import ShoppingLayout from "./components/shopping-view/layout";
-import NotFound from "./pages/not-found";
-import ShoppingHome from "./pages/shopping-view/home";
-import ShoppingListing from "./pages/shopping-view/listing";
-import ShoppingCheckout from "./pages/shopping-view/checkout";
-import ShoppingAcoount from "./pages/shopping-view/account";
+import CurseLayout from "./components/shopping-view/layout";
+import CurseHome from "./pages/curse-view/home";
+import CurseListing from "./pages/curse-view/listing";
+import CurseCheckout from "./pages/curse-view/checkout";
+import CurseAcoount from "./pages/curse-view/account";
 import CheckAuth from "./components/common/check-auth";
+import NotFound from "./pages/not-found";
 import { useSelector } from "react-redux";
+import JovHome from "./pages/home-view/home";
 
 function App() {
   const {user, isAuthenticated} = useSelector(state=> state.auth)
@@ -22,6 +23,12 @@ function App() {
   return (
     <div className="flex flex-col overflow-hidden bg-white">
       <Routes>
+        <Route>
+          <Route 
+          path="/" element={<JovHome />}
+          />
+        </Route>
+        
         <Route
           path="/auth"
           element={
@@ -52,14 +59,14 @@ function App() {
           path="/shop"
           element={
             <CheckAuth isAuthenticated={isAuthenticated} user={user}>
-              <ShoppingLayout />
+              <CurseLayout />
             </CheckAuth>
           }
         >
-          <Route path="home" element={<ShoppingHome />} />
-          <Route path="listing" element={<ShoppingListing />} />
-          <Route path="checkout" element={<ShoppingCheckout />} />
-          <Route path="account" element={<ShoppingAcoount />} />
+          <Route path="home" element={<CurseHome />} />
+          <Route path="listing" element={<CurseListing />} />
+          <Route path="checkout" element={<CurseCheckout />} />
+          <Route path="account" element={<CurseAcoount />} />
         </Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>

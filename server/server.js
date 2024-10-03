@@ -6,17 +6,17 @@ const authRouter = require('./routes/auth/auth-routes')
 
 
 mongoose
-.connect("mongodb+srv://elnatacorrea:N%40tan1861@cluster0.nzzjo.mongodb.net/")
+.connect("mongodb+srv://JOV:JOVeducation@jov.v6o68.mongodb.net/")
 .then(() => console.log("MongoDB connected"))
 .catch((error) => console.log(error));
 
 
 const app = express()
-const PORT = process.env.PORT || 5172
+const PORT = process.env.PORT || 5175
 
 app.use(
     cors({
-        origin: 'http://localhost:5173',
+        origin: 'http://localhost:5174',
         methods: ['GET', 'POST', 'DELETE', 'PUT'],
         allowedHeaders: [
             'Content-Type',

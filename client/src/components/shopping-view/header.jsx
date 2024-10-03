@@ -1,5 +1,5 @@
-function ShoppingHeader() {
-  return <div>shopping view header</div>;
+function CurseHeader() {
+  return <div>Curse view header</div>;
 }
 
-export default ShoppingHeader;
+export default CurseHeader;

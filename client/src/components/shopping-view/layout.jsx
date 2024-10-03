@@ -1,12 +1,12 @@
 import { Outlet } from "react-router-dom";
-import ShoppingHeader from "./header";
+import CurseHeader from "./header";
 
-function ShoppingLayout() {
+function CurseLayout() {
   return (
     <div>
       <div className="flex flex-col bg-inherit overflow-hidden">
         {/* common header */}
-        <ShoppingHeader/>
+        <CurseHeader/>
         <main className="flex flex-col w-full">
           <Outlet/>
         </main>
@@ -15,4 +15,4 @@ function ShoppingLayout() {
   );
 }
 
-export default ShoppingLayout;
+export default CurseLayout;
