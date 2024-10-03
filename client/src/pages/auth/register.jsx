@@ -41,22 +41,22 @@ function AuthRegister() {
     <div className="mx-auto w-full max-w-md space-x-6">
       <div className="text-center">
         <h1 className="text-3xl font-bold tracking-tight text-foreground">
-          Create new account
+          Criar nova conta
         </h1>
         <p className="mt-2">
           {" "}
-          Already have an account
+          Já tem uma conta?
           <Link
             className="font-medium ml-2 text-primary hover:underline"
             to="/auth/login"
           >
-            Login
+            Entrar
           </Link>
         </p>
       </div>
       <CommonForm
         formControls={registerFormControls}
-        buttonText={"Sign Up"}
+        buttonText={"Registrar"}
         formData={formData}
         setFormData={setFormData}
         onSubmit={onSubmit}
