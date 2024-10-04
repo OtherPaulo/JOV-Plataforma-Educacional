@@ -1,3 +1,4 @@
+
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
@@ -11,22 +12,15 @@ export const registerUser = createAsyncThunk(
   "/auth/register",
 
   async (formData) => {
-    try {
-      const response = await axios.post(
-        "http://localhost:5175/api/auth/register",
-        formData,
-        {
-          withCredentials: true,
-        }
-      );
-      return response.data;
-    } catch (error) {
-      console.error(
-        "Error during registration:",
-        error.response ? error.response.data : error.message
-      );
-      throw error;
-    }
+    const response = await axios.post(
+      "http://localhost:5175/api/auth/register",
+      formData,
+      {
+        withCredentials: true,
+      }
+    );
+
+    return response.data;
   }
 );
 
@@ -34,22 +28,31 @@ export const loginUser = createAsyncThunk(
   "/auth/login",
 
   async (formData) => {
-    try {
-      const response = await axios.post(
-        "http://localhost:5175/api/auth/login",
-        formData,
-        {
-          withCredentials: true,
-        }
-      );
-      return response.data;
-    } catch (error) {
-      console.error(
-        "Error during registration:",
-        error.response ? error.response.data : error.message
-      );
-      throw error;
-    }
+    const response = await axios.post(
+      "http://localhost:5175/api/auth/login",
+      formData,
+      {
+        withCredentials: true,
+      }
+    );
+
+    return response.data;
+  }
+);
+
+export const logoutUser = createAsyncThunk(
+  "/auth/logout",
+
+  async () => {
+    const response = await axios.post(
+      "http://localhost:5175/api/auth/logout",
+      {},
+      { 
+        withCredentials: true,
+      }
+    );
+
+    return response.data;
   }
 );
 
@@ -57,25 +60,18 @@ export const checkAuth = createAsyncThunk(
   "/auth/checkauth",
 
   async () => {
-    try {
-      const response = await axios.get(
-        "http://localhost:5174/api/auth/check-auth",
-        {
-          withCredentials: true,
-          headers: {
-            "Cache-Control":
-              "no-store, no-cache, must-revalidate, proxy-revalidate",
-          },
-        }
-      );
-      return response.data;
-    } catch (error) {
-      console.error(
-        "Error during registration:",
-        error.response ? error.response.data : error.message
-      );
-      throw error;
-    }
+    const response = await axios.get(
+      "http://localhost:5174/api/auth/check-auth",
+      {
+        withCredentials: true,
+        headers: {
+          "Cache-Control":
+            "no-store, no-cache, must-revalidate, proxy-revalidate",
+        },
+      }
+    );
+
+    return response.data;
   }
 );
 
@@ -124,6 +120,11 @@ const authSlice = createSlice({
         state.isAuthenticated = action.payload.success;
       })
       .addCase(checkAuth.rejected, (state, action) => {
+        state.isLoading = false;
+        state.user = null;
+        state.isAuthenticated = false;
+      })
+      .addCase(logoutUser.fulfilled, (state, action) => {
         state.isLoading = false;
         state.user = null;
         state.isAuthenticated = false;
