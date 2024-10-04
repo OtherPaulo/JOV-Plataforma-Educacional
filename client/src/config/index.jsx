@@ -1,42 +1,42 @@
 export const registerFormControls = [
-  {
-    name: "userName",
-    label: "User Name",
-    placeholder: "Enter you user name",
-    ComponentType: "input",
-    type: "text",
-  },
-  {
-    name: "email",
-    label: "Email",
-    placeholder: "Enter you email",
-    ComponentType: "input",
-    type: "email",
-  },
-  {
-    name: "password",
-    label: "password",
-    placeholder: "Enter you password",
-    ComponentType: "input",
-    type: "password",
-  },
+    {
+        name: "userName",
+        label: "Nome de Usuário",
+        placeholder: "Digite seu nome de usuário",
+        ComponentType: "input",
+        type: "text",
+    },
+    {
+        name: "email",
+        label: "Email",
+        placeholder: "Digite seu email",
+        ComponentType: "input",
+        type: "email",
+    },
+    {
+        name: "password",
+        label: "Senha",
+        placeholder: "Digite sua senha",
+        ComponentType: "input",
+        type: "password",
+    },
 ];
 
 export const loginFormControls = [
-  {
-    name: "email",
-    label: "Email",
-    placeholder: "Enter you email",
-    ComponentType: "input",
-    type: "email",
-  },
-  {
-    name: "password",
-    label: "password",
-    placeholder: "Enter you password",
-    ComponentType: "input",
-    type: "password",
-  },
+    {
+        name: "email",
+        label: "Email",
+        placeholder: "Digite seu email",
+        ComponentType: "input",
+        type: "email",
+    },
+    {
+        name: "password",
+        label: "Senha",
+        placeholder: "Digite sua senha",
+        ComponentType: "input",
+        type: "password",
+    },
 ];
 export const addProductFormElements = [
   {
@@ -88,25 +88,25 @@ export const addProductFormElements = [
     ],
   },
 
-  // {
-  //   label: "Price",
-  //   name: "price",
-  //   componentType: "input",
-  //   type: "number",
-  //   placeholder: "Enter product price",
-  // },
-  // {
-  //   label: "Sale Price",
-  //   name: "salePrice",
-  //   componentType: "input",
-  //   type: "number",
-  //   placeholder: "Enter sale price (optional)",
-  // },
-  // {
-  //   label: "Total Stock",
-  //   name: "totalStock",
-  //   componentType: "input",
-  //   type: "number",
-  //   placeholder: "Enter total stock",
-  // },
+// {
+//     label: "Preço",
+//     name: "preco",
+//     componentType: "input",
+//     type: "number",
+//     placeholder: "Digite o preço do produto",
+// },
+// {
+//     label: "Preço de Venda",
+//     name: "precoVenda",
+//     componentType: "input",
+//     type: "number",
+//     placeholder: "Digite o preço de venda (opcional)",
+// },
+// {
+//     label: "Estoque Total",
+//     name: "estoqueTotal",
+//     componentType: "input",
+//     type: "number",
+//     placeholder: "Digite o estoque total",
+// },
 ];
