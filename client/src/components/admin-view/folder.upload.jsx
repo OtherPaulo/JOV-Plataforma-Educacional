@@ -3,6 +3,7 @@ import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { FileIcon, UploadCloudIcon, XIcon } from "lucide-react";
 import { Button } from "../ui/button";
+import axios from "axios";
 
 function ProductFolderUpload({
   folderFile,
@@ -36,6 +37,15 @@ function ProductFolderUpload({
     if (inputRef.current) {
       inputRef.current.value = "";
     }
+  }
+
+  async function uploadFiletoCloud(){
+    const data = new FormData();
+    data.append('my_file', folderFile);
+    const response = await axios.post('http://localhost:5175/api/admin/files/upload-folder', data)
+    console.log(response, "response")
+
+      if(response) setUploadedFolderUrl(response.data) 
   }
 
   return (
