@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const cookieParse = require("cookie-parser");
 const cors = require("cors")
 const authRouter = require('./routes/auth/auth-routes')
-
+const uploadRouter = require('./routes/firebase/upload-routes');
 
 mongoose
 .connect("mongodb+srv://JOV:JOVeducation@jov.v6o68.mongodb.net/")
@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 5175
 
 app.use(
     cors({
-        origin: 'http://localhost:5174',
+        origin: ['http://localhost:5174', 'http://localhost:5173'],
         methods: ['GET', 'POST', 'DELETE', 'PUT'],
         allowedHeaders: [
             'Content-Type',
@@ -32,5 +32,6 @@ app.use(
 app.use(cookieParse());
 app.use(express.json());
 app.use('/api/auth', authRouter)
+app.use('/api/upload', uploadRouter);
 
 app.listen(PORT, () => console.log(`Server is now running on port ${PORT}`));
