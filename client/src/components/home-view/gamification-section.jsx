@@ -1,4 +1,3 @@
-
 const GamificationSection = () => {
   return (
     <section className="bg-black text-white">
@@ -8,29 +7,29 @@ const GamificationSection = () => {
             Gamificação: Seu Passaporte para Oportunidades!
           </h2>
           <p className="text-gray-300">
-            A gamificação na nossa plataforma não é apenas uma maneira de aprender—
-            é uma ferramenta poderosa que conecta seu desenvolvimento ao mercado
-            de trabalho! Ao completar desafios e acumular pontos, você não só enriquece
-            suas habilidades, mas também se destaca para recrutadores que estão de
-            olho em talentos. Os bônus exclusivos que você desbloqueia, como acesso a
-            estágios e eventos de networking, ampliam suas oportunidades de carreira.
-            Experimente uma jornada de aprendizado onde seu desempenho é visível e
-            valorizado, transformando cada conquista em uma porta aberta para o seu
-            futuro!
+            A gamificação na nossa plataforma não é apenas uma maneira de
+            aprender— é uma ferramenta poderosa que conecta seu desenvolvimento
+            ao mercado de trabalho! Ao completar desafios e acumular pontos,
+            você não só enriquece suas habilidades, mas também se destaca para
+            recrutadores que estão de olho em talentos. Os bônus exclusivos que
+            você desbloqueia, como acesso a estágios e eventos de networking,
+            ampliam suas oportunidades de carreira. Experimente uma jornada de
+            aprendizado onde seu desempenho é visível e valorizado,
+            transformando cada conquista em uma porta aberta para o seu futuro!
           </p>
         </div>
         <div className="w-full md:w-1/2 aspect-video bg-white">
-          {/* <Image
-            src="/placeholder.svg"
+          <img
+            src="/gamification.png"
             alt="Gamification illustration"
             width={600}
             height={400}
             className="w-full h-full object-cover"
-          /> */}
+          />
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default GamificationSection;

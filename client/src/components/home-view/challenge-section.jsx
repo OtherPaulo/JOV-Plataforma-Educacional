@@ -3,13 +3,13 @@ const ChallengeSection = () =>  {
   return (
     <section className="container mx-auto px-4 py-12 md:py-24 flex flex-col md:flex-row items-center gap-8">
       <div className="w-full md:w-1/2 aspect-video bg-gray-200">
-        {/* <Image
-          src="/placeholder.svg"
+        <img
+          src="/challengee.jpg"
           alt="Challenge illustration"
           width={600}
           height={400}
           className="w-full h-full object-cover"
-        /> */}
+        />
       </div>
       <div className="w-full md:w-1/2 space-y-4">
         <h2 className="text-3xl font-bold leading-tight">
